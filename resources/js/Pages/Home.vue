@@ -21,7 +21,7 @@ export default {
     });
 
     function submit() {
-      form.post("/add");
+      form.post("/api/add");
     }
 
     return { form, submit };
