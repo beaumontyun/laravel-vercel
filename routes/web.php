@@ -19,3 +19,6 @@ use App\Http\Controllers\HomeController;
 // });
 
 Route::get('/', [HomeController::class, 'show'])->name("home");
+
+Route::post('/add', [HomeController::class, 'store'])
+            ->name('add.store');

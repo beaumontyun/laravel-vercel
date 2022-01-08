@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Signup;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -15,5 +16,18 @@ class HomeController extends Controller
     public function show()
     {
         return Inertia::render('Home');
+    }
+
+    public function store(Request $request)
+    {
+        $fields = $request->validate([
+            'email' => 'required',
+        ]);
+
+        Signup::create([
+            'emails' => $fields['email'],
+        ]);
+
+        return back()->with('success', 'email submitted.'); 
     }
 }
