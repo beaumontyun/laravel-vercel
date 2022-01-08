@@ -16,10 +16,11 @@ mix.browserSync({
     proxy: process.env.APP_URL,
     notify: false
 });
-mix.js('resources/js/app.js', 'public/js').vue();
-mix.postCss('resources/css/app.css', 'public/css', [
-    require('tailwindcss'),
-]);
+mix.js('resources/js/app.js', 'public/js').vue()
+    .postCss("resources/css/app.css", "public/css", [
+        require("tailwindcss"),
+    ])
+    .sourceMaps();
 
 mix.alias({
     ziggy: path.resolve('vendor/tightenco/ziggy/dist'), // or 'vendor/tightenco/ziggy/dist/vue' if you're using the Vue plugin
