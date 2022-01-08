@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,7 +12,15 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.browserSync({
+    proxy: process.env.APP_URL,
+    notify: false
+});
+mix.js('resources/js/app.js', 'public/js').vue();
+mix.postCss('resources/css/app.css', 'public/css', [
+    require('tailwindcss'),
+]);
+
+mix.alias({
+    ziggy: path.resolve('vendor/tightenco/ziggy/dist'), // or 'vendor/tightenco/ziggy/dist/vue' if you're using the Vue plugin
+});
