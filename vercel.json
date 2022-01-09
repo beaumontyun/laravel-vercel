@@ -1,24 +1,13 @@
 {
     "version": 2,
-    "builds": [
-        { "src": "/api/index.php", "use": "vercel-php@0.4.0" },
-        { "src": "/public/**", "use": "@vercel/static" }
-    ],
-    "routes": [
-        {
-            "src": "/(css|js|images)/(.*)",
-            "dest": "public/$1/$2"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/index.php"
-        },
-        {
-            "src": "/(.*)",
-            "methods": ["POST"],
-            "dest": "/api/add"
+    "functions": {
+        "api/*.php": {
+          "runtime": "vercel-php@0.4.0"
         }
-    ],
+      },
+      "routes": [
+        { "src": "/(.*)",  "dest": "/api/index.php" }
+      ],
     "env": {
         "APP_NAME": "laravelverceldeployment",
         "APP_ENV": "production",
