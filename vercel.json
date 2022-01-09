@@ -1,18 +1,12 @@
 {
     "version": 2,
     "functions": {
-        "/api/index.php": { "runtime": "vercel-php@0.4.0" }
+        "api/index.php": { "runtime": "vercel-php@0.4.0" }
     },
-    "routes": [
-        {
-            "src": "/(css|js|images)/(.*)",
-            "dest": "public/$1/$2"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/index.php"
-        }
-    ],
+    "routes": [{
+        "src": "/(.*)",
+        "dest": "/api/index.php"
+    }],
     "env": {
         "APP_NAME": "laravelverceldeployment",
         "APP_ENV": "production",
