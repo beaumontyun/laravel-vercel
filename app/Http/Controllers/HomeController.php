@@ -27,7 +27,7 @@ class HomeController extends Controller
         Signup::create([
             'emails' => $fields['email'],
         ]);
-
-        return back()->with('success', 'email submitted.'); 
+        
+        return redirect()->route('home'); 
     }
 }

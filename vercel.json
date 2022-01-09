@@ -11,7 +11,7 @@
         },
         {
             "src": "/(.*)",
-            "dest": "/add"
+            "dest": "/api/index.php"
         }
     ],
     "env": {
