@@ -15,7 +15,6 @@
         },
         {
             "src": "/api/add",
-            "methods": ["POST"],
             "dest": "/api"
         }
     ],
