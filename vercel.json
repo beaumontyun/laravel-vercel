@@ -12,9 +12,7 @@
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
-        }
-    ],
-    "rewrites": [
+        },
         {
             "source": "/api/add",
             "destination": "/api"
