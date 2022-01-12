@@ -14,8 +14,9 @@
             "dest": "/api/index.php"
         },
         {
-            "source": "/api/add",
-            "destination": "/api"
+            "src": "/api/add",
+            "methods": ["POST"],
+            "dest": "/api"
         }
     ],
     "env": {
